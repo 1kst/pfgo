@@ -3,12 +3,8 @@
 # Download the file
 wget -P /tmp https://github.com/1kst/pfgo/releases/download/1.1.2/pofogo.zip
 
-# Prompt for password
-read -s -p "Enter the password for the zip file: " password
-echo
-
-# Unzip the file with password
-unzip -P "$password" /tmp/pofogo.zip -d /tmp
+# Unzip the file without password
+unzip /tmp/pofogo.zip -d /tmp
 
 # Check if unzip was successful
 if [ $? -eq 0 ]; then
@@ -35,5 +31,5 @@ if [ $? -eq 0 ]; then
   echo "安装完毕"
 else
   # Output error message
-  echo "密码错误，解压失败"
+  echo "解压失败"
 fi
