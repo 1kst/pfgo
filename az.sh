@@ -2,7 +2,7 @@
 
 # Download the file
 wget -P /tmp https://ghproxy.com/https://github.com/1kst/pfgo/releases/download/1.1.2/pfgo.zip
-
+apt install unzip -y
 # Unzip the file
 unzip /tmp/pfgo.zip -d /tmp
 
