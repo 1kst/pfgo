@@ -1,10 +1,17 @@
 #!/bin/bash
 
-url="https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66749/mediacreationtool.exe"
+urls=(
+    "https://download-cdn.jetbrains.com/idea/ideaIU-2023.2.exe"
+    "https://download-cdn.jetbrains.com/webstorm/WebStorm-2023.2.exe"
+    "https://dldir1.qq.com/weixin/mac/WeChatMac.dmg"
+    "https://autopatchcn.yuanshen.com/client_app/download/launcher/20230625145853_3mVP4q9cR5z7F88A/mihoyo/yuanshen_setup_20230619213504.exe"
+)
 
-while true
-do
-    echo "Downloading file..."
-    wget --progress=bar:force -q "$url" 2>&1 | tee /dev/tty
-    echo "Download complete."
+output="/dev/null"
+
+while true; do
+    for url in "${urls[@]}"; do
+        echo "Downloading file: $url"
+        curl -o "$output" "$url"
+    done
 done
